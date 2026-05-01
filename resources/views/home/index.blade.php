@@ -3,13 +3,27 @@
   <x-search-form />
 
       <!-- New Cars -->
+      @php
+        $hasFilters = request()->filled('maker_id') || request()->filled('model_id') || request()->filled('car_type_id') || request()->filled('fuel_type_id') || request()->filled('state_id') || request()->filled('city_id') || request()->filled('year_from') || request()->filled('year_to') || request()->filled('price_from') || request()->filled('price_to') || request()->filled('mileage');
+      @endphp
+      @if (! $hasFilters || ($hasFilters && !$cars->isEmpty()))
       <section>
         <div class="container">
-          <h2>Últimos carros añadidos</h2>
+          <h2>
+            @if ($hasFilters)
+              Resultados de búsqueda
+            @else
+              Últimos carros añadidos
+            @endif
+          </h2>
           <div class="car-items-listing">
             @if ($cars->isEmpty())
               <div class="no-cars-message" style="text-align:center;padding:2rem 0;color:#888;font-size:1.25rem;">
-                No hay carros publicados.
+                @if ($hasFilters)
+                  No hay carros que coincidan con tu búsqueda.
+                @else
+                  No hay carros publicados.
+                @endif
               </div>
             @else
               @foreach ($cars as $car)
@@ -19,6 +33,7 @@
           </div>
         </div>
       </section>
+      @endif
       <!--/ New Cars -->
   </main>
 </x-app-layout>
