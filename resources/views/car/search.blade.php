@@ -13,25 +13,25 @@
               </svg>
               Filters
             </button>
-            <h2>Define your search criteria</h2>
+            <h2>Defina su criterio de búsqueda</h2>
           </div>
 
           <select class="sort-dropdown">
-            <option value="">Order By</option>
-            <option value="price">Price Asc</option>
-            <option value="-price">Price Desc</option>
-            <option value="year">Year Asc</option>
-            <option value="-year">Year Desc</option>
-            <option value="mileage">Mileage Asc</option>
-            <option value="-mileage">Mileage Desc</option>
-            <option value="published_at">Newest at the Top</option>
-            <option value="-published_at">Oldest at the Top</option>
+            <option value="">Ordenar por</option>
+            <option value="price">Precio Asc</option>
+            <option value="-price">Precio Desc</option>
+            <option value="year">Año Asc</option>
+            <option value="-year">Año Desc</option>
+            <option value="mileage">Kilometraje Asc</option>
+            <option value="-mileage">Kilometraje Desc</option>
+            <option value="published_at">Más recientes primero</option>
+            <option value="-published_at">Más antiguos primero</option>
           </select>
         </div>
         <div class="search-car-results-wrapper">
           <div class="search-cars-sidebar">
             <div class="card card-found-cars">
-              <p class="m-0">Found <strong>{{ $cars->total() }}</strong> cars</p>
+              <p class="m-0">Se encontraron <strong>{{ $cars->total() }}</strong> carros</p>
 
               <button class="close-filters-button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 24px">
@@ -47,56 +47,56 @@
               <form action="" method="GET" class="find-a-car-form card flex p-medium">
                 <div class="find-a-car-inputs">
                   <div class="form-group">
-                    <label class="mb-medium">Maker</label>
+                    <label class="mb-medium">Marca</label>
                     <x-select-maker :value="request()->input('maker_id')" />
                   </div>
                   <div class="form-group">
-                    <label class="mb-medium">Model</label>
+                    <label class="mb-medium">Modelo</label>
                     <x-select-model :value="request()->input('model_id')" />
                   </div>
                   <div class="form-group">
-                    <label class="mb-medium">Type</label>
+                    <label class="mb-medium">Tipo</label>
                     <x-select-car-type :value="request()->input('car_type_id')" />
                   </div>
                   <div class="form-group">
-                    <label class="mb-medium">Year</label>
+                    <label class="mb-medium">Año</label>
                     <div class="flex gap-1">
-                      <input type="number" placeholder="Year From" name="year_from" value="{{ request()->input('year_from') }}" />
-                      <input type="number" placeholder="Year To" name="year_to" value="{{ request()->input('year_to') }}" />
+                      <input type="number" placeholder="Año Desde" name="year_from" value="{{ request()->input('year_from') }}" />
+                      <input type="number" placeholder="Año Hasta" name="year_to" value="{{ request()->input('year_to') }}" />
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="mb-medium">Price</label>
+                    <label class="mb-medium">Precio</label>
                     <div class="flex gap-1">
-                      <input type="number" placeholder="Price From" name="price_from" value="{{ request()->input('price_from') }}" />
-                      <input type="number" placeholder="Price To" name="price_to" value="{{ request()->input('price_to') }}" />
+                      <input type="number" placeholder="Precio Desde" name="price_from" value="{{ request()->input('price_from') }}" />
+                      <input type="number" placeholder="Precio Hasta" name="price_to" value="{{ request()->input('price_to') }}" />
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="mb-medium">Mileage</label>
+                    <label class="mb-medium">Kilometraje</label>
                     <div class="flex gap-1">
                       <x-select-mileage :value="request()->input('mileage')" name="mileage" />
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="mb-medium">State</label>
+                    <label class="mb-medium">Estado</label>
                     <x-select-state :value="request()->input('state_id')" />
                   </div>
                   <div class="form-group">
-                    <label class="mb-medium">City</label>
+                    <label class="mb-medium">Ciudad</label>
                     <x-select-city :value="request()->input('city_id')" />
                   </div>
                   <div class="form-group">
-                    <label class="mb-medium">Fuel Type</label>
+                    <label class="mb-medium">Tipo de Combustible</label>
                     <x-select-fuel-type :value="request()->input('fuel_type_id')" />
                   </div>
                 </div>
                 <div class="flex">
                   <button type="button" class="btn btn-find-a-car-reset">
-                    Reset
+                    Restablecer Filtros
                   </button>
                   <button class="btn btn-primary btn-find-a-car-submit">
-                    Search
+                    Buscar
                   </button>
                 </div>
               </form>
@@ -107,7 +107,7 @@
           <div class="search-cars-results">
             @if ($cars->count() == 0)
             <div class="text-center p-large">
-              No cars found matching your criteria. Please adjust your filters and try again.
+              No se encontraron carros que coincidan con tus criterios. Por favor, ajusta tus filtros e inténtalo de nuevo.
             </div>
             @else
               <div class="car-items-listing">

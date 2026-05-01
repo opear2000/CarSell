@@ -63,7 +63,6 @@ Route::middleware('restrict.unverified')->group(function () {
             return view('about');
         });
 
-        Route::get('/car/search', [CarController::class, 'search'])->name('car.search');
         Route::get('/car/watchlist', [CarController::class, 'watchlist'])->name('car.watchlist');
         Route::post('/car/{car}/watchlist', [CarController::class, 'storeWatchlist'])->name('car.watchlist.store');
         Route::delete('/car/{car}/watchlist', [CarController::class, 'destroyWatchlist'])->name('car.watchlist.destroy');
@@ -71,4 +70,7 @@ Route::middleware('restrict.unverified')->group(function () {
         Route::get('/car/{car}/images', [CarController::class, 'carImages'])->name('car.images');
         Route::put('/car/{car}/images', [CarController::class, 'updateImages'])->name('car.updateImages');
     });
+
+    // Allow guests and authenticated users to access car search
+    Route::get('/car/search', [CarController::class, 'search'])->name('car.search');
 });

@@ -480,6 +480,24 @@ document.addEventListener("DOMContentLoaded", function () {
   showPhone();
   showEmail();
 
+  // Reset button for car search form
+  document.querySelectorAll('.btn-find-a-car-reset').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const form = btn.closest('form');
+      if (!form) return;
+      // Clear all input/select fields
+      form.querySelectorAll('input, select').forEach(function(el) {
+        if (el.type === 'checkbox' || el.type === 'radio') {
+          el.checked = false;
+        } else {
+          el.value = '';
+        }
+      });
+      // Submit the form with no filters
+      form.submit();
+    });
+  });
+
   ScrollReveal().reveal(".hero-slide.active .hero-slider-title", {
     delay: 200,
     reset: true,
