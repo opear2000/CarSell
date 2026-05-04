@@ -1,8 +1,8 @@
 <?php
 
-test('It should display there are no published cars!', function () {
+test('It should display No hay carros publicados.', function () {
     $response = $this->get(route('home'));
 
     $response->assertStatus(200)
-        ->assertSee('There are no published cars.');
+        ->assertSee('No hay carros publicados.');
 });
