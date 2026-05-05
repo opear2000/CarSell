@@ -5,7 +5,7 @@
           <div class="auth-page-form">
             <div class="text-center">
               <a href="/">
-                <img src="/img/logoipsum-265.svg" alt="" />
+                <img src="/img/CarSell.logo.png" alt="" />
               </a>
             </div>
             <h1 class="auth-page-title">Iniciar Sesión</h1>

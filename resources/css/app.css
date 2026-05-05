@@ -1506,3 +1506,37 @@ a.pagination-item:hover {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+/* Added by Edgardo Ramirez */
+
+.logo-img {
+  height: 41px; /* matches your logo */
+  width: auto;
+  object-fit: contain;
+}
+
+.icon-sm {
+  width: 18px;
+  height: 18px;
+  margin-right: 4px;
+}
+
+.icon-md {
+  width: 24px;
+  height: 24px;
+}
+
+.navbar-menu {
+  position: relative;
+}
+
+.submenu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: white;
+  border: 1px solid #eee;
+  padding: 10px 0;
+  min-width: 180px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}

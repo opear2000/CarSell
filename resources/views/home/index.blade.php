@@ -1,5 +1,12 @@
 <x-app-layout title="Home Page">
-  <main>  
+
+  <main>
+    <div style="text-align:center; margin:2.5rem 0 1.5rem 0;">
+      <span style="font-size:2.2rem; font-style:italic; font-weight:900; color:#D97706; letter-spacing:1px; text-shadow:0 2px 12px #fff7e6, 0 1px 0 #fbbf24;">
+        Carros en venta en El Salvador
+      </span>
+    </div>
+
   <x-search-form />
 
       <!-- New Cars -->
