@@ -24,7 +24,7 @@ class ProfileController extends Controller
         $user = Auth::user();
         $user->update($request->only('name', 'email', 'phone'));
 
-        return redirect()->route('profile.index')->with('success', 'Profile updated successfully.');
+        return redirect()->route('profile.index')->with('success', 'Perfil actualizado exitosamente.');
     }
 
     public function updatePassword(Request $request)
@@ -37,11 +37,11 @@ class ProfileController extends Controller
         $user = Auth::user();
 
         if (!Hash::check($request->current_password, $user->password)) {
-            return back()->withErrors(['current_password' => 'Current password is incorrect.']);
+            return back()->withErrors(['current_password' => 'La contraseña actual es incorrecta.']);
         }
 
         $user->update(['password' => Hash::make($request->new_password)]);
 
-        return redirect()->route('profile.index')->with('success', 'Password updated successfully.');
+        return redirect()->route('profile.index')->with('success', 'Contraseña actualizada exitosamente.');
     }
 }

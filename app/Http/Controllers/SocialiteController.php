@@ -28,7 +28,7 @@ class SocialiteController extends Controller
         try {
             $socialUser = Socialite::driver($provider)->user();
         } catch (\Exception $e) {
-            return redirect()->route('login')->withErrors(['social_login' => 'Failed to authenticate with ' . ucfirst($provider) . '. Please try again.']);
+            return redirect()->route('login')->withErrors(['social_login' => 'Error al autenticar con ' . ucfirst($provider) . '. Por favor, inténtalo de nuevo.']);
         }
 
         $providerIdField = $provider . '_id';
@@ -69,6 +69,6 @@ class SocialiteController extends Controller
         Auth::login($user, true);
         $request->session()->regenerate();
 
-        return redirect()->intended(route('home'))->with('success', 'Logged in successfully with ' . ucfirst($provider) . '!');
+        return redirect()->intended(route('home'))->with('success', 'Inicio de sesión exitoso con ' . ucfirst($provider) . '!');
     }
 }

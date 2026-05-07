@@ -38,6 +38,6 @@ class SignupController extends Controller
         Auth::login($user);
 
         // Redirect to verification notice page
-        return redirect()->route('verification.notice')->with('success', 'Account created successfully! Please verify your email.');
+        return redirect()->route('verification.notice')->with('success', 'Cuenta creada exitosamente! Por favor verifica tu correo electrónico.');
     }   
 }

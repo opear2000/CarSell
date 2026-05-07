@@ -104,7 +104,7 @@ class CarController extends Controller
             }
         }
 
-        return redirect()->route('car.index')->with('success', 'Car created successfully.');
+        return redirect()->route('car.index')->with('success', 'Carro creado exitosamente.');
     }
 
     public function show( Request $request, Car $car)                  
@@ -173,7 +173,7 @@ class CarController extends Controller
         // Update or create features
         $car->features()->updateOrCreate([], $featuresData);
 
-        return redirect()->route('car.index')->with('success', 'Car updated successfully.');
+        return redirect()->route('car.index')->with('success', 'Carro actualizado exitosamente.');
     }
 
     public function destroy(Car $car)                  
@@ -181,7 +181,7 @@ class CarController extends Controller
         Gate::authorize('update-car', $car);
 
         $car->delete();
-        return redirect()->route('car.index')->with('success', 'Car deleted successfully.');
+        return redirect()->route('car.index')->with('success', 'Carro eliminado exitosamente.');
     }
 
     public function search(Request $request)                  
@@ -286,14 +286,14 @@ class CarController extends Controller
     {
         $request->user()->favoriteCars()->syncWithoutDetaching([$car->id]);
 
-        return back()->with('success', 'Car added to your watchlist.');
+        return back()->with('success', 'Carro agregado a tu lista de deseos.');
     }
 
     public function destroyWatchlist(Request $request, Car $car)
     {
         $request->user()->favoriteCars()->detach($car->id);
 
-        return back()->with('success', 'Car removed from your watchlist.');
+        return back()->with('success', 'Carro eliminado de tu lista de deseos.');
     }
 
     public function carImages(Car $car)
@@ -346,6 +346,6 @@ class CarController extends Controller
             }
         }
 
-        return redirect()->route('car.images', $car)->with('success', 'Car images updated successfully.');
+        return redirect()->route('car.images', $car)->with('success', 'Imágenes del carro actualizadas exitosamente.');
     }
 }

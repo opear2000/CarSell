@@ -27,7 +27,7 @@ class LoginController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('home'))->with('success', 'Logged in successfully!');
+        return redirect()->intended(route('home'))->with('success', 'Inicio de sesión exitoso.');
     }
 
     public function destroy(Request $request)
@@ -37,6 +37,6 @@ class LoginController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect()->route('home')->with('success', 'Logged out successfully!');
+        return redirect()->route('home')->with('success', 'Cierre de sesión exitoso.');
     }
 }

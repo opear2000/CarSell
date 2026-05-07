@@ -401,7 +401,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const icon = isInWatchlist ? filledHeartIcon : outlineHeartIcon;
       const iconWithSize = icon.replace('width: 16px', `width: ${getIconSize(button)}px`);
       button.innerHTML = iconWithSize;
-      button.setAttribute('aria-label', isInWatchlist ? 'Remove from watchlist' : 'Add to watchlist');
+      button.setAttribute('aria-label', isInWatchlist ? 'Remover de la lista de deseos' : 'Agregar a la lista de deseos');
       form.dataset.inWatchlist = isInWatchlist ? 'true' : 'false';
 
       const methodInput = form.querySelector('input[name="_method"]');
@@ -435,8 +435,8 @@ document.addEventListener("DOMContentLoaded", function () {
           setButtonState(form, !isCurrentlyInWatchlist);
 
             if (isCurrentlyInWatchlist) {
-              showWatchlistToast('Car removed from watchlist', 'success', {
-                actionLabel: 'Undo',
+              showWatchlistToast('Automóvil eliminado de la lista de deseos', 'success', {
+                actionLabel: 'Deshacer',
                 onAction: async () => {
                   try {
                     if (form.dataset.loading === 'true') return;
@@ -445,9 +445,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     await sendWatchlistRequest(form, true);
                     setButtonState(form, true);
-                    showWatchlistToast('Car restored to watchlist');
+                    showWatchlistToast('Automóvil restaurado en la lista de deseos');
                   } catch (error) {
-                    showWatchlistToast('Could not restore watchlist item.', 'error');
+                    showWatchlistToast('No se pudo restaurar el automóvil en la lista de deseos.', 'error');
                   } finally {
                     form.dataset.loading = 'false';
                     if (button) button.disabled = false;
@@ -455,10 +455,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 },
               });
             } else {
-              showWatchlistToast('Car added to watchlist');
+              showWatchlistToast('Automóvil agregado a la lista de deseos');
             }
         } catch (error) {
-          showWatchlistToast('Could not update watchlist. Please try again.', 'error');
+          showWatchlistToast('No se pudo actualizar la lista de deseos. Por favor, inténtalo de nuevo.', 'error');
         } finally {
           form.dataset.loading = 'false';
           if (button) button.disabled = false;
