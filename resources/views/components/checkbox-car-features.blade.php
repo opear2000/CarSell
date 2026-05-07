@@ -2,18 +2,18 @@
 
 @php
     $features = [
-        'air_conditioning' => 'Air Conditioning',
-        'power_windows' => 'Power Windows',
-        'power_door_locks' => 'Power Door Locks',
+        'air_conditioning' => 'Aire Acondicionado',
+        'power_windows' => 'Ventanas Eléctricas',
+        'power_door_locks' => 'Cerraduras Eléctricas',
         'abs' => 'ABS',
-        'cruise_control' => 'Cruise Control',
-        'bluetooth_connectivity' => 'Bluetooth Connectivity',
-        'remote_start' => 'Remote Start',
-        'gps_navigation' => 'GPS Navigation',
-        'heated_seats' => 'Heated Seats',
-        'climate_control' => 'Climate Control',
-        'rear_parking_sensors' => 'Rear Parking Sensors',
-        'leather_seats' => 'Leather Seats', 
+        'cruise_control' => 'Control de Crucero',
+        'bluetooth_connectivity' => 'Conectividad Bluetooth',
+        'remote_start' => 'Arranque Remoto',
+        'gps_navigation' => 'Navegación GPS',
+        'heated_seats' => 'Asientos Calefaccionados',
+        'climate_control' => 'Control de Clima',
+        'rear_parking_sensors' => 'Sensores de Estacionamiento',
+        'leather_seats' => 'Asientos de Cuero', 
     ];
 @endphp
               <div class="form-group">

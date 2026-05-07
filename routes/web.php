@@ -43,13 +43,13 @@ Route::middleware('restrict.unverified')->group(function () {
         Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
             $request->fulfill();
 
-            return redirect()->route('home')->with('success', 'Email verified successfully!');
+            return redirect()->route('home')->with('success', 'Correo electrónico verificado con éxito!');
         })->middleware(['signed', 'throttle:6,1'])->name('verification.verify');
 
         Route::post('/email/verification-notification', function (Request $request) {
             $request->user()->sendEmailVerificationNotification();
 
-            return back()->with('success', 'A new verification link has been sent to your email address.');
+            return back()->with('success', 'Se ha enviado un nuevo enlace de verificación a su dirección de correo electrónico.');
         })->middleware('throttle:6,1')->name('verification.send');
 
         Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');

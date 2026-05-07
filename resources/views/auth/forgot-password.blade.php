@@ -8,7 +8,7 @@
                 <img src="/img/CarSell.logo.png" alt="" />
               </a>
             </div>
-            <h1 class="auth-page-title">Request Password Reset</h1>
+            <h1 class="auth-page-title">Pedido de Restablecimiento de Contraseña</h1>
 
             <form action="{{ route('password.email') }}" method="post">
               @csrf
@@ -37,12 +37,12 @@
               </div>
 
               <button class="btn btn-primary btn-login w-full">
-                Request password reset
+                Solicitar restablecimiento de contraseña
               </button>
 
               <div class="login-text-dont-have-account">
-                Already have an account? -
-                <a href="{{ route('login') }}"> Click here to login </a>
+                ¿Ya tienes una cuenta? -
+                <a href="{{ route('login') }}"> Haz clic aquí para iniciar sesión </a>
               </div>
             </form>
           </div>

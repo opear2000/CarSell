@@ -7,7 +7,7 @@
         {{ $title }} 
     </div>
         @if ($slot->isEmpty())
-            <p>No content provided.</p>
+            <p>No contenido proporcionado.</p>
         @else
             {{ $slot }}
         @endif

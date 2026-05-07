@@ -17,9 +17,9 @@
     ]
 @endphp
 <select name="mileage">
-    <option value="">Any Mileage</option>
+    <option value="">Cualquier kilometraje</option>
     @foreach ($options as $option )
     <option value="{{ $option }}"
-        @selected($attributes->get('value') == $option)>{{ number_format($option) }} or less</option>
+        @selected($attributes->get('value') == $option)>{{ number_format($option) }} o menos</option>
     @endforeach
 </select>

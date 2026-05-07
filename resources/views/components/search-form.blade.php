@@ -41,10 +41,10 @@
             </div>
             <div>
               <button type="button" class="btn btn-find-a-car-reset">
-                Reset
+                Reiniciar
               </button>
               <button class="btn btn-primary btn-find-a-car-submit">
-                Search
+                Buscar
               </button>
             </div>
           </form>

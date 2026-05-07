@@ -8,7 +8,7 @@
                 <img src="/img/CarSell.logo.png" alt="" />
               </a>
             </div>
-            <h1 class="auth-page-title">Reset Password</h1>
+            <h1 class="auth-page-title">Restablecer Contraseña</h1>
 
             <form action="{{ route('password.update') }}" method="post">
               @csrf
@@ -31,24 +31,24 @@
               </div>
 
               <div class="form-group @error('password') has-error @enderror">
-                <input type="password" name="password" placeholder="New Password" />
+                <input type="password" name="password" placeholder="Nueva Contraseña" />
                 <div class="error-message">
                   {{ $errors->first('password') }}
                 </div>
               </div>
 
               <div class="form-group @error('password_confirmation') has-error @enderror">
-                <input type="password" name="password_confirmation" placeholder="Confirm New Password" />
+                <input type="password" name="password_confirmation" placeholder="Confirmar Nueva Contraseña" />
                 <div class="error-message">
                   {{ $errors->first('password_confirmation') }}
                 </div>
               </div>
 
-              <button class="btn btn-primary btn-login w-full">Reset Password</button>
+              <button class="btn btn-primary btn-login w-full">Restablecer Contraseña</button>
 
               <div class="login-text-dont-have-account">
-                Back to login -
-                <a href="{{ route('login') }}"> Click here to login </a>
+                Volver al inicio de sesión -
+                <a href="{{ route('login') }}"> Haz clic aquí para iniciar sesión </a>
               </div>
             </form>
           </div>
