@@ -55,49 +55,49 @@
             </div>
 
             <div class="card car-detailed-description">
-              <h2 class="car-details-title">Detailed Description</h2>
+              <h2 class="car-details-title">Descripción Detallada</h2>
                 {!! $car->description !!}
             </div>
 
             <div class="card car-detailed-description">
-              <h2 class="car-details-title">Car Specifications</h2>
+              <h2 class="car-details-title">Especificaciones del Auto</h2>
 
               <ul class="car-specifications">
                 <x-car-specification :value="$car->features?->air_conditioning" >
-                  Air Conditioning
+                  Aire Acondicionado
                 </x-car-specification>
                 <x-car-specification :value="$car->features?->power_windows" >
-                  Power Windows
+                  Ventanas Eléctricas
                 </x-car-specification>
                 <x-car-specification :value="$car->features?->power_door_locks" >
-                  Power Door Locks
+                  Cerraduras Eléctricas 
                 </x-car-specification>
                 <x-car-specification :value="$car->features?->abs" >
                   ABS
                 </x-car-specification>
                 <x-car-specification :value="$car->features?->cruise_control" >
-                  Cruise Control
+                  Control de Crucero
                 </x-car-specification>
                 <x-car-specification :value="$car->features?->bluetooth_connectivity" >
-                  Bluetooth Connectivity
+                  Conectividad Bluetooth
                 </x-car-specification>
                 <x-car-specification :value="$car->features?->remote_start" >
-                  Remote Start
+                  Arranque Remoto
                 </x-car-specification>
                 <x-car-specification :value="$car->features?->gps_navigation" >
-                  GPS Navigation System
+                  Sistema de Navegación GPS
                 </x-car-specification>
                 <x-car-specification :value="$car->features?->heated_seats" >
-                  Heated Seats
+                  Asientos Calefaccionados
                 </x-car-specification>
                 <x-car-specification :value="$car->features?->climate_control" >
-                  Climate Control
+                  Control de Clima
                 </x-car-specification>
                 <x-car-specification :value="$car->features?->rear_parking_sensors" >
-                  Rear Parking Sensors
+                  Sensores de Estacionamiento
                 </x-car-specification>
                 <x-car-specification :value="$car->features?->leather_seats" >
-                  Leather Seats
+                  Asientos de Cuero
                 </x-car-specification>
               </ul>
             </div>
@@ -249,12 +249,12 @@
               </svg>
 
               {{ \Illuminate\Support\Str::mask($car->phone, '*', -3) }}
-              <span class="car-details-phone-view">view full number</span>
+              <span class="car-details-phone-view">Ver número completo</span>
             </a>
             <br>
             <a href="#" class="car-details-email" data-full-email="{{ $car->user?->email ?? $car->owner?->email }}">
               {{ $car->user ? Illuminate\Support\Str::mask($car->user->email, '*', 3, -7) : ($car->owner ? Illuminate\Support\Str::mask($car->owner->email, '*', 3, -7) : '') }}
-              <span class="car-details-email-view">view full email</span>
+              <span class="car-details-email-view">Ver correo completo</span>
             </a>
           </div>
         </div>

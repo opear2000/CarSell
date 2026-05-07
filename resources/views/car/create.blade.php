@@ -1,7 +1,7 @@
    <x-app-layout title="Add New Car">
     <main>
       <div class="container-small">
-        <h1 class="car-details-page-title">Add new car</h1>
+        <h1 class="car-details-page-title">Añadir nuevo auto</h1>
         <form
           action="{{ route('car.store') }}"
           method="POST"
@@ -14,7 +14,7 @@
               <div class="row">
                 <div class="col">
                   <div class="form-group @error('maker_id') has-error @enderror">
-                    <label>Maker</label>
+                    <label>Fabricante</label>
                     <x-select-maker :value="old('maker_id')" />
                     <p class="error-message"> 
                       {{ $errors->first('maker_id') }}
@@ -23,7 +23,7 @@
                 </div>
                 <div class="col">
                   <div class="form-group @error('model_id') has-error @enderror">
-                    <label>Model</label>
+                    <label>Modelo</label>
                     <x-select-model :value="old('model_id')" />
                     <p class="error-message"> 
                       {{ $errors->first('model_id') }}
@@ -32,7 +32,7 @@
                 </div>
                 <div class="col">
                   <div class="form-group @error('year') has-error @enderror">
-                    <label>Year</label>
+                    <label>Año</label>
                     <x-select-year :value="old('year')" />
                     <p class="error-message"> 
                       {{ $errors->first('year') }}
@@ -41,7 +41,7 @@
                 </div>
               </div>
               <div class="form-group @error('car_type_id') has-error @enderror">
-                <label>Car Type</label>
+                <label>Tipo de Auto</label>
                 <x-radio-list-car-type :value="old('car_type_id')" />
                 <p class="error-message"> 
                   {{ $errors->first('car_type_id') }}
@@ -50,7 +50,7 @@
               <div class="row">
                 <div class="col">
                   <div class="form-group @error('price') has-error @enderror">
-                    <label>Price</label>
+                    <label>Precio</label>
                     <input type="number" value="{{ old('price') }}" name="price" />
                     <p class="error-message"> 
                       {{ $errors->first('price') }}
@@ -59,8 +59,8 @@
                 </div>
                 <div class="col">
                   <div class="form-group @error('vin') has-error @enderror">
-                    <label>Vin Code</label>
-                    <input type="text" placeholder="Vin Code" name="vin" value="{{ old('vin') }}" />
+                    <label>Código VIN</label>
+                    <input type="text" placeholder="Código VIN" name="vin" value="{{ old('vin') }}" />
                     <p class="error-message"> 
                       {{ $errors->first('vin') }}
                     </p>
@@ -68,7 +68,7 @@
                 </div>
                 <div class="col">
                   <div class="form-group @error('mileage') has-error @enderror">
-                    <label>Mileage (ml)</label>
+                    <label>Kilometraje (ml)</label>
                     <input type="number" value="{{ old('mileage') }}" name="mileage" />
                     <p class="error-message"> 
                       {{ $errors->first('mileage') }}
@@ -77,7 +77,7 @@
                 </div>
               </div>
               <div class="form-group @error('fuel_type_id') has-error @enderror">
-                <label>Fuel Type</label>
+                <label>Tipo de Combustible</label>
                 <x-radio-list-fuel-type :value="old('fuel_type_id')" />
                 <p class="error-message"> 
                   {{ $errors->first('fuel_type_id') }}
@@ -86,7 +86,7 @@
               <div class="row">
                 <div class="col">
                   <div class="form-group @error('state_id') has-error @enderror">
-                    <label>State/Region</label>
+                    <label>Estado/Región</label>
                     <x-select-state :value="old('state_id')" />
                     <p class="error-message"> 
                       {{ $errors->first('state_id') }}
@@ -95,7 +95,7 @@
                 </div>
                 <div class="col">
                   <div class="form-group @error('city_id') has-error @enderror">
-                    <label>City</label>
+                    <label>Ciudad</label>
                     <x-select-city :value="old('city_id')" />
                     <p class="error-message"> 
                       {{ $errors->first('city_id') }}
@@ -106,8 +106,8 @@
               <div class="row">
                 <div class="col">
                   <div class="form-group @error('address') has-error @enderror">
-                    <label>Address</label>
-                    <input placeholder="Address" name="address" value="{{ old('address') }}" />
+                    <label>Dirección</label>
+                    <input placeholder="Dirección" name="address" value="{{ old('address') }}" />
                     <p class="error-message"> 
                       {{ $errors->first('address') }}
                     </p>          
@@ -115,8 +115,8 @@
                 </div>
                 <div class="col">
                   <div class="form-group @error('phone') has-error @enderror">
-                    <label>Phone</label>
-                    <input placeholder="Phone" name="phone" value="{{ old('phone') }}" />
+                    <label>Teléfono</label>
+                    <input placeholder="Teléfono" name="phone" value="{{ old('phone') }}" />
                     <p class="error-message"> 
                       {{ $errors  ->first('phone') }}
                     </p>            
@@ -125,14 +125,14 @@
               </div>
            <x-checkbox-car-features />
               <div class="form-group @error('description') has-error @enderror">
-                <label>Detailed Description</label>
+                <label>Descripción Detallada</label>
                 <textarea rows="10" name="description">{{ old('description') }}</textarea>
                 <p class="error-message"> 
                   {{ $errors->first('description') }}
                 </p>  
               </div>
               <div class="form-group @error('published_at') has-error @enderror">
-                <label>Publish Date</label>
+                <label>Fecha de Publicación</label>
                   <input type="date" name="published_at" value="{{ old('published_at') }}">
                     <p class="error-message"> 
                       {{ $errors  ->first('published_at') }}
@@ -140,7 +140,7 @@
               </div>
             </div>
             <div class="form-images">
-               <label>Upload images altogether</label>
+               <label>Subir imágenes juntas</label>
               <div class="form-image-upload">
                 <div class="upload-placeholder">
                   <svg

@@ -7,11 +7,11 @@
       <section>
         <div class="container">
           <div class="flex justify-between items-center">
-            <h2> My Favorite Cars</h2>
+            <h2> Mis Autos Favoritos</h2>
             @if ($carsCount > 0)
               <div class="pagination-summary">
                 <p>
-                  Showing {{ $cars->firstItem() }} to {{ $cars->lastItem() }} of {{ $carsCount }} cars
+                  Mostrando {{ $cars->firstItem() }} a {{ $cars->lastItem() }} de {{ $carsCount }} autos favoritos
                 </p>
               </div>
             @endif
@@ -25,7 +25,7 @@
 
             @if ($carsCount === 0)
              <div class="text-center p-large">
-              You do not have any favorite cars yet. Browse cars and add them to your watchlist to see them here.
+              No tiene autos favoritos todavia. Busque su auto favorito y agréguelo a su lista de favoritos para verlo aquí.
             </div>
             @endif  
         </div>   

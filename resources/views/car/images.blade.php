@@ -3,16 +3,16 @@
        <main>
       <div>
         <div class="container">
-          <h1 class="car-details-page-title">Manage Images for {{ $car->getTitle() }}</h1>
+          <h1 class="car-details-page-title">Administrar Imágenes para {{ $car->getTitle() }}</h1>
           <div class="card p-medium">
             <form action="{{ route('car.updateImages', $car) }}" method="POST" enctype="multipart/form-data">
               @csrf
               @method('PUT')
               <div class="form-group">
-                <label for="new_images">Add images. Each image must be of format webp, jpeg, png, jpg, gif and not be greater than 200KB</label>
+                <label for="new_images">Agregar imágenes. Cada imagen debe tener el formato webp, jpeg, png, jpg, gif y no debe ser mayor de 200KB</label>
                 <div class="flex items-center gap-medium">
                   <input type="file" name="new_images[]" id="new_images" multiple style="display:none;" />
-                  <button type="button" class="btn btn-primary mb-medium" onclick="document.getElementById('new_images').click(); return false;">Add Images</button>
+                  <button type="button" class="btn btn-primary mb-medium" onclick="document.getElementById('new_images').click(); return false;">Agregar Imágenes</button>
                   <span id="selected-files" class="text-muted"></span>
                 </div>
                 @if ($errors->has('new_images') || $errors->has('new_images.*'))
@@ -63,7 +63,7 @@
                   @empty
                   <tr>
                     <td colspan="3" class="text-center p-large">
-                      You don't have any car images yet.
+                      Aún no tienes imágenes del automóvil.
                     </td>
                   </tr>
                   @endforelse                
@@ -72,8 +72,8 @@
             </div>
             <div class="p-large">
               <div class="flex items-center gap-large">
-                <button type="submit" class="btn btn-primary mb-large">Update Images</button>&nbsp;&nbsp;&nbsp;
-              <a href="{{ route('car.index') }}" class="btn btn-primary mb-large">Back to My Cars</a>
+                <button type="submit" class="btn btn-primary mb-large">Actualizar Imágenes</button>&nbsp;&nbsp;&nbsp;
+              <a href="{{ route('car.index') }}" class="btn btn-primary mb-large">Volver a Mis Autos</a>
               </div>
             </form>
           </div>

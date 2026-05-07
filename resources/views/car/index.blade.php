@@ -3,17 +3,17 @@
        <main>
       <div>
         <div class="container">
-          <h1 class="car-details-page-title">My Cars</h1>
+          <h1 class="car-details-page-title">Mis Autos</h1>
           <div class="card p-medium">
             <div class="table-responsive">
               <table class="table">
                 <thead>
                   <tr>
-                    <th>Image</th>
-                    <th>Title</th>
-                    <th>Date</th>
-                    <th>Published</th>
-                    <th>Actions</th>
+                    <th>Imagen</th>
+                    <th>Título</th>
+                    <th>Fecha</th>
+                    <th>Publicado</th>
+                    <th>Acciones</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -28,7 +28,7 @@
                     </td>
                     <td>{{ $car->getTitle() }}</td>
                     <td>{{ $car->getCreateDate() }}</td>
-                    <td>{{ $car->published_at ? 'Yes' : 'No' }}</td>
+                    <td>{{ $car->published_at ? 'Sí' : 'No' }}</td>
                     <td class="">
                       <a
                         href="{{ route('car.edit', $car) }}"
@@ -49,7 +49,7 @@
                           />
                         </svg>
 
-                        edit
+                        editar
                       </a>
                       <a
                         href="{{ route('car.images', $car) }}"
@@ -69,10 +69,10 @@
                             d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
                           />
                         </svg>
-                        images
+                        imágenes
                       </a>
 
-                      <form action="{{ route('car.destroy', $car) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this car?');" style="display: inline-block">
+                      <form action="{{ route('car.destroy', $car) }}" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este automóvil?');" style="display: inline-block">
                         @csrf
                         @method('DELETE')
                       <button class="btn btn-delete inline-flex items-center">
@@ -91,7 +91,7 @@
                           />
                         </svg>
 
-                        delete
+                        eliminar
                       </button>
                       </form>
                     </td>
@@ -99,7 +99,7 @@
                   @empty
                   <tr>
                     <td colspan="5" class="text-center p-large">
-                      You don't have any cars yet. <a href="{{ route('car.create') }}">Add new car</a>
+                      Aún no tienes autos. <a href="{{ route('car.create') }}">Agregar nuevo auto</a>
                     </td>
                   </tr>
                   @endforelse                
