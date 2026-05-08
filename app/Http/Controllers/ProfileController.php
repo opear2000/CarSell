@@ -29,10 +29,31 @@ class ProfileController extends Controller
 
     public function updatePassword(Request $request)
     {
-        $request->validate([
+
+        $passwordRules = [
+            'required',
+            'string',
+            \Illuminate\Validation\Rules\Password::min(8)->mixedCase()->numbers()->symbols()->uncompromised(),
+        ];
+
+        $messages = [
+            'new_password.required' => 'Your password must meet the following requirements:',
+            'new_password.min' => 'Your password must meet the following requirements:',
+            'new_password.mixed_case' => 'Your password must meet the following requirements:',
+            'new_password.numbers' => 'Your password must meet the following requirements:',
+            'new_password.symbols' => 'Your password must meet the following requirements:',
+            'new_password.uncompromised' => 'Your password must meet the following requirements:',
+        ];
+
+        $validated = $request->validate([
             'current_password' => 'required',
-            'new_password' => ['required', 'string', 'confirmed', \Illuminate\Validation\Rules\Password::min(8)->mixedCase()->numbers()->symbols()->uncompromised()],
-        ]);
+            'new_password' => $passwordRules,
+            'new_password_confirmation' => ['required', 'string'],
+        ], $messages);
+
+        if ($request->new_password !== $request->new_password_confirmation) {
+            return back()->withErrors(['new_password_confirmation' => 'Your passwords do not match. Please try again.'])->withInput();
+        }
 
         $user = Auth::user();
 
