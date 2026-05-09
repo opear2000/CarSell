@@ -1,8 +1,6 @@
 
 
-@extends('layouts.app')
-
-@section('content')
+<x-layouts.app>
 <section class="max-w-2xl mx-auto py-12 px-4">
     <h1 class="text-3xl font-bold mb-4">Términos de Servicio</h1>
     <p class="text-sm text-gray-500 mb-6">Fecha de Vigencia: 9 de mayo de 2026</p>
@@ -51,5 +49,5 @@
     <span class="block">SalAutoMarket servicio al cliente</span>
     <span class="block">Email: lospirineosit@gmail.com</span></p>
 </section>
-@endsection
+</x-layouts.app>
 

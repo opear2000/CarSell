@@ -1,7 +1,5 @@
 
-@extends('layouts.app')
-
-@section('content')
+<x-layouts.app>
 <section class="max-w-2xl mx-auto py-12 px-4">
     <h1 class="text-3xl font-bold mb-4">Política de Privacidad</h1>
     <p class="text-sm text-gray-500 mb-6">Fecha de Vigencia: 9 de mayo de 2026</p>
@@ -58,4 +56,4 @@
     <span class="block">Servicio al cliente de SalAutoMarket</span>
     <span class="block">Correo electrónico: lospirineosit@gmail.com</span></p>
 </section>
-@endsection
+</x-layouts.app>
