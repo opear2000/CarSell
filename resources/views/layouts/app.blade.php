@@ -1,13 +1,16 @@
-@props(['title' => '', 'bodyClass' => null,'footerLinks' => ''])
+@extends('layouts.base')
 
-<x-base-layout :title :$bodyClass>
-    <x-layouts.header></x-layouts.header>
-    @session('success')
+@section('title', $title ?? '')
+@section('bodyClass', $bodyClass ?? '')
+
+@section('content')
+    @includeIf('components.layouts.header')
+    @if(session('success'))
         <div class="container my-large">
             <div class="success-message">   
                 {{ session('success') }}
             </div>
         </div>
-    @endsession
-    {{ $slot }}
-</x-base-layout>
+    @endif
+    @yield('content')
+@endsection

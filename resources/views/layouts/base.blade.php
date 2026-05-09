@@ -32,7 +32,7 @@
  <!-- <body class="@isset($cssClass) {{ $cssClass }} @endisset"> -->
   <body @if ($bodyClass) class="{{ $bodyClass }}" @endif>
 
-    {{ $slot }}
+    @yield('content')
     
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.js"

@@ -1,17 +1,23 @@
 <?php
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\SignupController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\SocialiteController;
-use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PasswordResetController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SignupController;
+use App\Http\Controllers\SocialiteController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
+Route::get('/privacy', function () {
+    return view('privacy');
+})->name('privacy');
 
+Route::get('/terms', function () {
+    return view('terms');
+})->name('terms');
 
 Route::middleware('restrict.unverified')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
