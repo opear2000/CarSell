@@ -60,7 +60,12 @@
                 ¿No tienes una cuenta? -
                 <a href="{{ route('signup') }}"> Haz clic aquí para crear una</a>
               </div>
+
             </form>
+            <div class="text-center mt-4">
+              <a href="https://php.lospirineosit.com/privacy" target="_blank" rel="noopener" class="text-sm text-gray-600 hover:text-blue-600 underline mr-4">Política de Privacidad</a>
+              <a href="https://php.lospirineosit.com/terms" target="_blank" rel="noopener" class="text-sm text-gray-600 hover:text-blue-600 underline">Términos de Servicio</a>
+            </div>
           </div>
           <div class="auth-page-image">
             <img src="/img/car-png-39071.png" alt="" class="img-responsive" />

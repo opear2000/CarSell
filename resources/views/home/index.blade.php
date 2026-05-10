@@ -43,4 +43,8 @@
       @endif
       <!--/ New Cars -->
   </main>
+  <div class="text-center mt-8 mb-4">
+    <a href="https://php.lospirineosit.com/privacy" target="_blank" rel="noopener" class="text-sm text-gray-600 hover:text-blue-600 underline mr-4">Política de Privacidad</a>
+    <a href="https://php.lospirineosit.com/terms" target="_blank" rel="noopener" class="text-sm text-gray-600 hover:text-blue-600 underline">Términos de Servicio</a>
+  </div>
 </x-app-layout>
