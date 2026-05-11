@@ -249,13 +249,14 @@
               </svg>
 
               {{ \Illuminate\Support\Str::mask($car->phone, '*', -3) }}
-              <span class="car-details-phone-view">Ver número completo</span>
+              <span class="car-details-phone-view">Ver Completo</span>
             </a>
-            <br>
+            <br><br>
             <a href="#" class="car-details-email" data-full-email="{{ $car->user?->email ?? $car->owner?->email }}">
               {{ $car->user ? Illuminate\Support\Str::mask($car->user->email, '*', 3, -7) : ($car->owner ? Illuminate\Support\Str::mask($car->owner->email, '*', 3, -7) : '') }}
-              <span class="car-details-email-view">Ver correo completo</span>
+              <span class="car-details-email-view">Ver Completo</span>
             </a>
+            <br>
           </div>
         </div>
       </div>
